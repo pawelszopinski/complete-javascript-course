@@ -7,21 +7,24 @@ let verdict = document.querySelector('.message');
 let score = document.querySelector('.score');
 const againBtn = document.querySelector('.again');
 let highscore = document.querySelector('.highscore');
-let number = Number(input.value)
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
+
+
 function checkNumber() {
-  if (number === secretNumber) {
+  const quantifiedInput = Number(input.value)
+  if (quantifiedInput === secretNumber) {
     verdict.textContent = '🥳 👌 You made it. Well done';
     document.body.style.backgroundColor = '#60b347';
-    guessNumber.textContent = secretNumber
     if (score.textContent > highscore.textContent) {
     highscore.textContent = score.textContent;
   }
-  } else if (number < secretNumber) {
+  guessNumber.textContent = secretNumber
+  guessNumber.style.width = '30rem'
+  } else if (quantifiedInput < secretNumber) {
     verdict.textContent = '👆 Too low';
     score.textContent--;
-  } else if (number > secretNumber) {
+  } else if (quantifiedInput > secretNumber) {
     verdict.textContent = '👇 Too high';
     score.textContent--;
   } else {
@@ -39,10 +42,11 @@ btnCheck.addEventListener('click', checkNumber);
 
 againBtn.addEventListener('click', () => {
   btnCheck.disabled = false;
-  rr = Math.trunc(Math.random() * 20) + 1;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
   guessNumber.textContent = '?'
   input.value = null;
   verdict.textContent = 'Start guessing...';
   score.textContent = 20;
   document.body.style.backgroundColor = '#222';
+  guessNumber.style.width = '15rem'
 });
