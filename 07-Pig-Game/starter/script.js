@@ -14,7 +14,7 @@ let arr = [];
 let sum = 0;
 let activePlayer = 0;
 rollBtn.addEventListener('click', () => {
-  const diceNumber = Math.floor(Math.random() * 6) + 1;
+  const diceNumber = Math.trunc(Math.random() * 6) + 1;
   switch (diceNumber) {
     case 1:
       diceResult.src = 'dice-1.png';
