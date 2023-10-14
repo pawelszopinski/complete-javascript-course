@@ -11,24 +11,27 @@ let score0 = document.getElementById('score--0');
 let score1 = document.getElementById('score--1');
 
 // Initial phase
-score0.textContent = 0;
-score1.textContent = 0;
-let playing = true;
-let results = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-diceResult.classList.add('hidden');
+let playing;
+let results;
+let currentScore;
+let activePlayer;
 
-const init = ()=>{
-score0.textContent = 0;
-score1.textContent = 0;
-playing = true;
-results = [0, 0];
-currentScore = 0;
-activePlayer = 0;
-diceResult.classList.add('hidden');
-}
-
+const init = function () {
+  player1.classList.remove('player--active');
+  player1.classList.remove('player--winner');
+  player0.classList.remove('player--winner');
+  player0.classList.add('player--active');
+  score0.textContent = 0;
+  score1.textContent = 0;
+  currentScore0.textContent = 0;
+  currentScore1.textContent = 0;
+  playing = true;
+  results = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  diceResult.classList.add('hidden');
+};
+init();
 // Function switch active player
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -68,7 +71,7 @@ holdBtn.addEventListener('click', () => {
     results[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       results[activePlayer];
-    if (results[activePlayer] >= 10) {
+    if (results[activePlayer] >= 100) {
       diceResult.classList.add('hidden');
       document
         .querySelector(`.player--${activePlayer}`)
@@ -83,9 +86,7 @@ holdBtn.addEventListener('click', () => {
   }
 });
 
-newBtn.addEventListener("click", ()=> {
-
-})
+newBtn.addEventListener('click', init);
 // let arr = [];
 // let sum = 0;
 // let activePlayer = 0;
