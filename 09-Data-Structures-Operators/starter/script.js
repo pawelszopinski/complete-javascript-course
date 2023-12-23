@@ -1,4 +1,4 @@
-'use strict';
+   'use strict';
 
 // Data needed for a later exercise
 const flights =
@@ -11,7 +11,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
+ 
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +27,20 @@ const restaurant = {
     },
   },
 };
+
+// 
+console.log(0||"Pawel");
+console.log(undefined||null);
+console.log(true||0);
+
+restaurant.numGuests = 23
+
+const guest1 = restaurant.numGuests ? restaurant.numGuests:10
+
+const guest2 = restaurant.numGuests || 10
+
+console.log(guest1, guest2);
+
+// AND &&
+
+console.log(1 && "Pawel");
