@@ -29,18 +29,20 @@ const restaurant = {
 };
 
 // 
-console.log(0||"Pawel");
-console.log(undefined||null);
-console.log(true||0);
+// console.log(0||"Pawel");
+// console.log(undefined||null);
+// console.log(true||0);
 
-restaurant.numGuests = 23
+// restaurant.numGuests = 0
 
 const guest1 = restaurant.numGuests ? restaurant.numGuests:10
 
 const guest2 = restaurant.numGuests || 10
+// Nullish (null or undefined only)  "??"
+const guest3 = restaurant.numGuests ?? 10
 
-console.log(guest1, guest2);
+console.log( guest1, guest2,guest3);
 
 // AND &&
 
-console.log(1 && "Pawel");
+// console.log(1 && "Pawel");
