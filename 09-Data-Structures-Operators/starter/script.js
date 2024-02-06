@@ -154,3 +154,23 @@ const game = {
 //  2.
 const [gk,...fieldPlayers] = players1
 // 3.
+const allPlayers = [...players1,...players2]
+// 4.
+const playersFinal=[...players1,'Thiago', 'Coutinho', 'Perisic']
+// 5
+const team1 =game.odds.team1
+const draw = game.odds.x
+const team2 = game.odds.team2
+// 6
+const playersScored = game.scored
+function printGoals(players) {
+  
+  let goalList=[];
+  for (let goal of players) {
+    goalList[goal] = goalList[goal]? goalList[goal]+1:1
+  }
+  console.log(goalList);
+}
+const players = ['Davies', 'Muller', 'Lewandowski','Kimmich'];
+printGoals(playersScored)
+printGoals(players)
